@@ -3,10 +3,11 @@ services:
     container_name: ${container_name}
     image: ghcr.io/notifiarr/dockwatch:main
     ports:
-            - ${IP}:${ext_port}:${http_port}/tcp
+    - ${IP}:${ext_port}:${http_port}/tcp
     environment:
-      - PGID=${PGID}
-      - TZ=${TZ}
+    - PGID=${PGID}
+    - TZ=${TZ}
     volumes:
-      - /var/lib/docker/volumes/dockwatch/config:/config
-      - /var/run/docker.sock:/var/run/docker.sock
+    - /var/lib/docker/volumes/dockwatch/config:/config
+    - /var/run/docker.sock:/var/run/docker.sock
+volumes: {}
